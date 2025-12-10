@@ -252,6 +252,229 @@ body {
     color: #2a5c5c;
 }
 
+/* Стили для прайс-листа */
+.prices__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.price-category {
+    margin-bottom: 40px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid #2a5c5c;
+}
+
+.price-category__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #2a5c5c;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-category__title i {
+    font-size: 1.2rem;
+}
+
+.price-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.price-item:last-child {
+    border-bottom: none;
+}
+
+.price-item__name {
+    flex: 1;
+    font-weight: 500;
+    color: #333;
+}
+
+.price-item__duration {
+    width: 80px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.price-item__price {
+    width: 100px;
+    text-align: right;
+    font-weight: 700;
+    color: #2a5c5c;
+    font-size: 1.1rem;
+}
+
+.prices__note {
+    margin-top: 30px;
+    padding: 20px;
+    background: #eaf4f4;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.prices__note i {
+    color: #2a5c5c;
+    margin-right: 8px;
+}
+
+/* Стили для команды */
+.section__subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member__photo {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.team-member__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .team-member__photo img {
+    transform: scale(1.05);
+}
+
+.team-member__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 15px;
+}
+
+.team-member__experience {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.team-member__info {
+    padding: 25px;
+}
+
+.team-member__name {
+    font-size: 1.4rem;
+    color: #2a5c5c;
+    margin-bottom: 5px;
+}
+
+.team-member__position {
+    color: #e6a756;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.team-member__specialization {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.team-member__specialization span {
+    background: #f0f7f7;
+    color: #2a5c5c;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.team-member__bio {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Адаптивность для прайса и команды */
+@media (max-width: 768px) {
+    .price-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .price-item__duration,
+    .price-item__price {
+        width: auto;
+        text-align: left;
+    }
+    
+    .price-category {
+        padding: 20px 15px;
+    }
+    
+    .team-member__photo {
+        height: 200px;
+    }
+    
+    .team__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .price-category__title {
+        font-size: 1.3rem;
+    }
+    
+    .team-member__info {
+        padding: 20px;
+    }
+}
+
 /* CTA */
 .cta {
     background-color: #eaf4f4;
