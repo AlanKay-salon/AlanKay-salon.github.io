@@ -334,7 +334,330 @@ body {
     color: #2a5c5c;
     margin-right: 8px;
 }
+/* Стили для главного специалиста (Алан) */
+.main-specialist {
+    background: linear-gradient(135deg, #eaf4f4 0%, #f0f7f7 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(42, 92, 92, 0.1);
+    border: 1px solid rgba(42, 92, 92, 0.1);
+}
 
+.main-specialist__inner {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.main-specialist__photo {
+    flex: 0 0 300px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.main-specialist__photo img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.main-specialist:hover .main-specialist__photo img {
+    transform: scale(1.03);
+}
+
+.main-specialist__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.main-specialist__experience {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.main-specialist__badge {
+    background: #e6a756;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.main-specialist__info {
+    flex: 1;
+}
+
+.main-specialist__name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #2a5c5c;
+    margin-bottom: 10px;
+}
+
+.main-specialist__position {
+    color: #e6a756;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.main-specialist__specialization {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.main-specialist__specialization span {
+    background: rgba(42, 92, 92, 0.1);
+    color: #2a5c5c;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(42, 92, 92, 0.2);
+}
+
+.main-specialist__bio {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.main-specialist__quote {
+    background: white;
+    border-left: 4px solid #e6a756;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 25px;
+    position: relative;
+}
+
+.main-specialist__quote i {
+    color: #e6a756;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.main-specialist__quote p {
+    color: #666;
+    font-style: italic;
+    margin: 0;
+    display: inline;
+}
+
+/* Подзаголовок для остальной команды */
+.team__subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #2a5c5c;
+    margin-bottom: 40px;
+    font-weight: 600;
+    position: relative;
+}
+
+.team__subtitle::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #e6a756;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Обновлённые стили для обычных членов команды */
+.team__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member__photo {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.team-member__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .team-member__photo img {
+    transform: scale(1.05);
+}
+
+.team-member__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    padding: 15px;
+}
+
+.team-member__experience {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.team-member__info {
+    padding: 25px;
+}
+
+.team-member__name {
+    font-size: 1.4rem;
+    color: #2a5c5c;
+    margin-bottom: 5px;
+}
+
+.team-member__position {
+    color: #e6a756;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.team-member__specialization {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.team-member__specialization span {
+    background: #f0f7f7;
+    color: #2a5c5c;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.team-member__bio {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .main-specialist__inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .main-specialist__photo {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .main-specialist__photo img {
+        height: 350px;
+    }
+    
+    .main-specialist__name {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-specialist {
+        padding: 25px;
+    }
+    
+    .main-specialist__photo {
+        max-width: 300px;
+    }
+    
+    .main-specialist__photo img {
+        height: 300px;
+    }
+    
+    .main-specialist__name {
+        font-size: 1.8rem;
+    }
+    
+    .main-specialist__position {
+        font-size: 1rem;
+    }
+    
+    .main-specialist__specialization span {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
+    .team__grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .team__subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-specialist {
+        padding: 20px;
+    }
+    
+    .main-specialist__photo {
+        max-width: 250px;
+    }
+    
+    .main-specialist__photo img {
+        height: 250px;
+    }
+    
+    .main-specialist__name {
+        font-size: 1.6rem;
+    }
+    
+    .main-specialist__specialization {
+        gap: 5px;
+    }
+    
+    .main-specialist__specialization span {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
 /* Стили для команды */
 .section__subtitle {
     text-align: center;
