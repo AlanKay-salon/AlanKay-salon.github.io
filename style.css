@@ -751,6 +751,154 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
+/* Стили для формы отзыва */
+.review-form-container {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    animation: fadeIn 0.5s ease;
+}
+
+.review-form h3 {
+    color: #2a5c5c;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.review-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus {
+    outline: none;
+    border-color: #2a5c5c;
+    box-shadow: 0 0 0 3px rgba(42, 92, 92, 0.1);
+}
+
+.rating-input {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.rating-input span {
+    color: #555;
+    font-weight: 500;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.stars i {
+    font-size: 1.8rem;
+    color: #ddd;
+    transition: color 0.2s;
+}
+
+.stars i.fas {
+    color: #ffc107;
+}
+
+.stars i:hover {
+    color: #ffc107;
+}
+
+.rating-text {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.review-form select {
+    background-color: white;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.form-actions .btn {
+    min-width: 150px;
+}
+
+/* Анимация для формы */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Уведомление об успешной отправке */
+.review-success {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background: #eaf7ea;
+    border-radius: 10px;
+    color: #2d5c2d;
+    border: 1px solid #b8e0b8;
+}
+
+.review-success i {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.review-success h4 {
+    margin-bottom: 10px;
+    color: #2d5c2d;
+}
+
 /* CTA */
 .cta {
     background-color: #eaf4f4;
