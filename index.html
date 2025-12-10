@@ -576,24 +576,74 @@
             </button>
         </div>
         
-        <!-- Кнопка "Добавить отзыв" -->
-        <div class="reviews-cta">
-            <p>Уже были у нас? Поделитесь впечатлениями!</p>
-            <a href="#contacts" class="btn btn--primary">
-                <i class="fas fa-pen"></i>
-                Оставить отзыв
-            </a>
-            <div class="reviews-external">
-                <p>Читайте больше отзывов:</p>
-                <div class="external-links">
-                    <a href="https://yandex.ru/maps/org/alan_kay/36889332991?si=46nhau6jmp947wkt73znfyexvc" target="_blank" class="external-link">
-                        <i class="fab fa-yandex"></i>
-                        Яндекс.Карты
-                    </a>
+        <!-- CTA для отзывов - ИСПРАВЛЕННАЯ ВЕРСИЯ -->
+<div class="reviews-cta">
+    <p>Уже были у нас? Поделитесь впечатлениями!</p>
+    <button id="openReviewForm" class="btn btn--primary">
+        <i class="fas fa-pen"></i>
+        Оставить отзыв
+    </button>
+    
+    <!-- Форма отзыва (скрыта по умолчанию) -->
+    <div id="reviewFormContainer" class="review-form-container" style="display: none;">
+        <div class="review-form">
+            <h3>Напишите ваш отзыв</h3>
+            <form id="reviewForm">
+                <div class="form-row">
+                    <input type="text" placeholder="Ваше имя" id="reviewName" required>
+                    <input type="email" placeholder="Ваш email" id="reviewEmail">
                 </div>
-            </div>
+                
+                <div class="rating-input">
+                    <span>Ваша оценка:</span>
+                    <div class="stars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <span id="ratingText" class="rating-text">Поставьте оценку</span>
+                </div>
+                
+                <textarea placeholder="Расскажите о вашем опыте посещения нашего салона..." 
+                          rows="5" id="reviewText" required></textarea>
+                
+                <select id="reviewService">
+                    <option value="">Выберите услугу</option>
+                    <option value="Классический массаж">Классический массаж</option>
+                    <option value="Спортивный массаж">Спортивный массаж</option>
+                    <option value="Антицеллюлитный массаж">Антицеллюлитный массаж</option>
+                    <option value="Лимфодренажный массаж">Лимфодренажный массаж</option>
+                    <option value="Медовый массаж">Медовый массаж</option>
+                    <option value="Ламинирование ресниц">Ламинирование ресниц</option>
+                    <option value="Оформление бровей">Оформление бровей</option>
+                    <option value="Другое">Другое</option>
+                </select>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn--primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Отправить отзыв
+                    </button>
+                    <button type="button" id="closeReviewForm" class="btn btn--light">
+                        Отмена
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
+    
+    <div class="reviews-external">
+        <p>Читайте больше отзывов на этих площадках:</p>
+        <div class="external-links">
+            <a href="https://yandex.ru/maps/org/alan_kay/36889332991?si=46nhau6jmp947wkt73znfyexvc" class="external-link">
+                <i class="fab fa-yandex"></i>
+                Яндекс.Карты
+            </a>
+        </div>
+    </div>
+</div>
 </section>
     <!-- CTA (Призыв к действию) -->
     <section class="cta section">
