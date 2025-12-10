@@ -475,6 +475,282 @@ body {
     }
 }
 
+/* Стили для отзывов */
+.reviews-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.review-card__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.review-card__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #eaf4f4;
+}
+
+.review-card__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-card__author {
+    flex: 1;
+}
+
+.review-card__author h4 {
+    margin: 0;
+    color: #2a5c5c;
+    font-size: 1.1rem;
+}
+
+.review-card__date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 3px;
+}
+
+.review-card__rating {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.review-card__content {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.review-card__content p {
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+    position: relative;
+    padding-left: 20px;
+}
+
+.review-card__content p::before {
+    content: '"';
+    font-size: 3rem;
+    color: #eaf4f4;
+    position: absolute;
+    left: -10px;
+    top: -15px;
+    font-family: Georgia, serif;
+}
+
+.review-card__service {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.review-card__service i {
+    color: #e6a756;
+}
+
+/* Навигация слайдера */
+.reviews-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.reviews-nav-btn {
+    background: #2a5c5c;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews-nav-btn:hover {
+    background: #1e4545;
+    transform: scale(1.1);
+}
+
+.reviews-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: #2a5c5c;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #9ec2c2;
+}
+
+/* CTA для отзывов */
+.reviews-cta {
+    text-align: center;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.reviews-cta p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.reviews-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reviews-external {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+.reviews-external p {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 1rem;
+}
+
+.external-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    border: 1px solid #ddd;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.external-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.external-link.instagram:hover {
+    color: #E1306C;
+    border-color: #E1306C;
+}
+
+.external-link i {
+    font-size: 1.1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .reviews-slider {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .review-card {
+        padding: 20px;
+    }
+    
+    .reviews-navigation {
+        gap: 20px;
+    }
+    
+    .reviews-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .external-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .external-link {
+        width: 200px;
+        justify-content: center;
+    }
+}
+
+/* Стили для иконок брендов */
+.fa-yandex {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+/* Анимация при переключении отзывов */
+@keyframes fadeIn {
+    from { opacity: 0.7; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.review-card {
+    animation: fadeIn 0.5s ease;
+}
+
 /* CTA */
 .cta {
     background-color: #eaf4f4;
