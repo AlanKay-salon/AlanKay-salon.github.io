@@ -315,7 +315,7 @@
             </div>
         </div>
     </section>
-  <!-- Наша команда -->
+ <!-- Наша команда -->
 <section class="team section" id="team">
     <div class="container">
         <h2 class="section__title">Наша команда</h2>
@@ -350,7 +350,7 @@
         
         <!-- Остальная команда - два специалиста рядом -->
         <div class="team__subtitle">Наши специалисты</div>
-            
+        <div class="team__grid"> <!-- ДОБАВЛЕН ОТСУТСТВУЮЩИЙ DIV -->
             <!-- Специалист 1 -->
             <div class="team-member">
                 <div class="team-member__photo">
@@ -390,10 +390,11 @@
                     <p class="team-member__bio">Создаёт идеальную форму бровей с учётом анатомии лица. Мастер по ламинированию ресниц премиум-класса.</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> <!-- ЗАКРЫВАЮЩИЙ DIV ДЛЯ team__grid -->
+    </div> <!-- ЗАКРЫВАЮЩИЙ DIV ДЛЯ container -->
 </section>
-    <!-- Отзывы клиентов -->
+
+<!-- Отзывы клиентов -->
 <section class="reviews section" id="reviews">
     <div class="container">
         <h2 class="section__title">Отзывы наших клиентов</h2>
@@ -404,7 +405,7 @@
             <div class="review-card">
                 <div class="review-card__header">
                     <div class="review-card__avatar">
-                        
+                        <!-- УБРАН ЗАКРЫВАЮЩИЙ DIV БЕЗ ОТКРЫВАЮЩЕГО -->
                     </div>
                     <div class="review-card__author">
                         <h4>Мария</h4>
@@ -430,7 +431,7 @@
             <div class="review-card">
                 <div class="review-card__header">
                     <div class="review-card__avatar">
-                        
+                        <!-- УБРАН ЗАКРЫВАЮЩИЙ DIV БЕЗ ОТКРЫВАЮЩЕГО -->
                     </div>
                     <div class="review-card__author">
                         <h4>Александр</h4>
@@ -456,7 +457,7 @@
             <div class="review-card">
                 <div class="review-card__header">
                     <div class="review-card__avatar">
-                        
+                        <!-- УБРАН ЗАКРЫВАЮЩИЙ DIV БЕЗ ОТКРЫВАЮЩЕГО -->
                     </div>
                     <div class="review-card__author">
                         <h4>Екатерина</h4>
@@ -482,7 +483,7 @@
             <div class="review-card">
                 <div class="review-card__header">
                     <div class="review-card__avatar">
-                        
+                        <!-- УБРАН ЗАКРЫВАЮЩИЙ DIV БЕЗ ОТКРЫВАЮЩЕГО -->
                     </div>
                     <div class="review-card__author">
                         <h4>Ольга</h4>
@@ -508,7 +509,7 @@
             <div class="review-card">
                 <div class="review-card__header">
                     <div class="review-card__avatar">
-                        
+                        <!-- УБРАН ЗАКРЫВАЮЩИЙ DIV БЕЗ ОТКРЫВАЮЩЕГО -->
                     </div>
                     <div class="review-card__author">
                         <h4>Ирина</h4>
@@ -534,7 +535,7 @@
             <div class="review-card">
                 <div class="review-card__header">
                     <div class="review-card__avatar">
-                        
+                        <!-- УБРАН ЗАКРЫВАЮЩИЙ DIV БЕЗ ОТКРЫВАЮЩЕГО -->
                     </div>
                     <div class="review-card__author">
                         <h4>Дарья</h4>
@@ -576,73 +577,74 @@
         </div>
         
         <!-- CTA для отзывов - ИСПРАВЛЕННАЯ ВЕРСИЯ -->
-<div class="reviews-cta">
-    <p>Уже были у нас? Поделитесь впечатлениями!</p>
-    <button id="openReviewForm" class="btn btn--primary">
-        <i class="fas fa-pen"></i>
-        Оставить отзыв
-    </button>
-    
-    <!-- Форма отзыва (скрыта по умолчанию) -->
-    <div id="reviewFormContainer" class="review-form-container" style="display: none;">
-        <div class="review-form">
-            <h3>Напишите ваш отзыв</h3>
-            <form id="reviewForm">
-                <div class="form-row">
-                    <input type="text" placeholder="Ваше имя" id="reviewName" required>
-                    <input type="email" placeholder="Ваш email" id="reviewEmail">
+        <div class="reviews-cta">
+            <p>Уже были у нас? Поделитесь впечатлениями!</p>
+            <button id="openReviewForm" class="btn btn--primary">
+                <i class="fas fa-pen"></i>
+                Оставить отзыв
+            </button>
+            
+            <!-- Форма отзыва (скрыта по умолчанию) -->
+            <div id="reviewFormContainer" class="review-form-container" style="display: none;">
+                <div class="review-form">
+                    <h3>Напишите ваш отзыв</h3>
+                    <form id="reviewForm">
+                        <div class="form-row">
+                            <input type="text" placeholder="Ваше имя" id="reviewName" required>
+                            <input type="email" placeholder="Ваш email" id="reviewEmail">
+                        </div>
+                        
+                        <div class="rating-input">
+                            <span>Ваша оценка:</span>
+                            <div class="stars">
+                                <i class="far fa-star" data-rating="1"></i>
+                                <i class="far fa-star" data-rating="2"></i>
+                                <i class="far fa-star" data-rating="3"></i>
+                                <i class="far fa-star" data-rating="4"></i>
+                                <i class="far fa-star" data-rating="5"></i>
+                            </div>
+                            <span id="ratingText" class="rating-text">Поставьте оценку</span>
+                        </div>
+                        
+                        <textarea placeholder="Расскажите о вашем опыте посещения нашего салона..." 
+                                  rows="5" id="reviewText" required></textarea>
+                        
+                        <select id="reviewService">
+                            <option value="">Выберите услугу</option>
+                            <option value="Классический массаж">Классический массаж</option>
+                            <option value="Спортивный массаж">Спортивный массаж</option>
+                            <option value="Антицеллюлитный массаж">Антицеллюлитный массаж</option>
+                            <option value="Лимфодренажный массаж">Лимфодренажный массаж</option>
+                            <option value="Медовый массаж">Медовый массаж</option>
+                            <option value="Ламинирование ресниц">Ламинирование ресниц</option>
+                            <option value="Оформление бровей">Оформление бровей</option>
+                            <option value="Другое">Другое</option>
+                        </select>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Отправить отзыв
+                            </button>
+                            <button type="button" id="closeReviewForm" class="btn btn--light">
+                                Отмена
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                
-                <div class="rating-input">
-                    <span>Ваша оценка:</span>
-                    <div class="stars">
-                        <i class="far fa-star" data-rating="1"></i>
-                        <i class="far fa-star" data-rating="2"></i>
-                        <i class="far fa-star" data-rating="3"></i>
-                        <i class="far fa-star" data-rating="4"></i>
-                        <i class="far fa-star" data-rating="5"></i>
-                    </div>
-                    <span id="ratingText" class="rating-text">Поставьте оценку</span>
+            </div>
+            
+            <div class="reviews-external">
+                <p>Читайте больше отзывов на этих площадках:</p>
+                <div class="external-links">
+                    <a href="https://yandex.ru/maps/org/alan_kay/36889332991?si=46nhau6jmp947wkt73znfyexvc" class="external-link">
+                        <i class="fab fa-yandex"></i>
+                        Яндекс.Карты
+                    </a>
                 </div>
-                
-                <textarea placeholder="Расскажите о вашем опыте посещения нашего салона..." 
-                          rows="5" id="reviewText" required></textarea>
-                
-                <select id="reviewService">
-                    <option value="">Выберите услугу</option>
-                    <option value="Классический массаж">Классический массаж</option>
-                    <option value="Спортивный массаж">Спортивный массаж</option>
-                    <option value="Антицеллюлитный массаж">Антицеллюлитный массаж</option>
-                    <option value="Лимфодренажный массаж">Лимфодренажный массаж</option>
-                    <option value="Медовый массаж">Медовый массаж</option>
-                    <option value="Ламинирование ресниц">Ламинирование ресниц</option>
-                    <option value="Оформление бровей">Оформление бровей</option>
-                    <option value="Другое">Другое</option>
-                </select>
-                
-                <div class="form-actions">
-                    <button type="submit" class="btn btn--primary">
-                        <i class="fas fa-paper-plane"></i>
-                        Отправить отзыв
-                    </button>
-                    <button type="button" id="closeReviewForm" class="btn btn--light">
-                        Отмена
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-    
-    <div class="reviews-external">
-        <p>Читайте больше отзывов на этих площадках:</p>
-        <div class="external-links">
-            <a href="https://yandex.ru/maps/org/alan_kay/36889332991?si=46nhau6jmp947wkt73znfyexvc" class="external-link">
-                <i class="fab fa-yandex"></i>
-                Яндекс.Карты
-            </a>
-        </div>
-    </div>
-</div>
+    </div> <!-- ЗАКРЫВАЮЩИЙ DIV ДЛЯ container -->
 </section>
     <!-- CTA (Призыв к действию) -->
     <section class="cta section">
@@ -654,36 +656,64 @@
             </div>
         </div>
     </section>
-
-    <!-- Контакты -->
-    <section class="contacts section" id="contacts">
-        <div class="container">
-            <h2 class="section__title">Контакты</h2>
-            <div class="contacts__inner">
-                <div class="contacts__info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Адрес</h3>
-                            <p>г. Краснодар, ул. Автолюбителей, д. 52/3</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h3>Телефон</h3>
-                            <p>+7 (995) 261-18-17</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h3>Часы работы</h3>
-                            <p>Ежедневно с 10:00 до 21:00</p>
-                        </div>
+<!-- Контакты -->
+<section class="contacts section" id="contacts">
+    <div class="container">
+        <h2 class="section__title">Контакты</h2>
+        <div class="contacts__inner">
+            <div class="contacts__info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Адрес</h3>
+                        <p>г. Краснодар, ул. Автолюбителей, д. 52/3</p>
+                        <!-- Можно добавить ссылку на карты -->
+                        <a href="https://yandex.ru/maps/org/alan_kay/36889332991" 
+                           target="_blank" 
+                           class="map-link">
+                            <i class="fas fa-external-link-alt"></i> Посмотреть на карте
+                        </a>
                     </div>
                 </div>
-                <form class="contact-form" id="booking-form">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h3>Телефон</h3>
+                        <p>
+                            <a href="tel:+79952611817" class="phone-link">+7 (995) 261-18-17</a>
+                        </p>
+                        <!-- Можно добавить WhatsApp -->
+                        <a href="https://wa.me/79952611817" 
+                           target="_blank" 
+                           class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> Написать в WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Часы работы</h3>
+                        <p>Ежедневно с 10:00 до 21:00</p>
+                        <p class="contact-note">Последняя запись: 20:00</p>
+                    </div>
+                </div>
+                
+                <!-- Можно добавить социальные сети -->
+                <div class="contact-social">
+                    <h4>Мы в соцсетях:</h4>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/spa_alan_kay" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/byalankay" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="booking-form">
                     <input type="text" placeholder="Ваше имя" required>
                     <input type="tel" placeholder="Телефон" required>
                     <input type="email" placeholder="E-mail">
