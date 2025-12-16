@@ -4,6 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alan Кай | Классика массажа | Центр эстетики лица и тела</title>
+    <style>
+        /* Обновляем фон всего сайта */
+        body {
+            background-color: #f8f5f1;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            background-attachment: fixed;
+        }
+        
+        /* Обновляем секцию услуг */
+        .services {
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            margin: 40px auto;
+            padding: 60px 20px;
+            max-width: 1200px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9e1d6;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d4b896, #b89a7c, #d4b896);
+        }
+        
+        .section__title {
+            color: #5a4a42;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section__title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #d4b896, #b89a7c);
+        }
+        
+        /* Обновляем карточки услуг */
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f0e6dd;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: #d4b896;
+        }
+        
+        .service-card__icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f8f5f1, #e9e1d6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            border: 2px solid #d4b896;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card__icon i {
+            font-size: 32px;
+            color: #5a4a42;
+            z-index: 2;
+        }
+        
+        .service-card__icon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 184, 150, 0.1), rgba(212, 184, 150, 0.3));
+            border-radius: 50%;
+        }
+        
+        .service-card__title {
+            color: #5a4a42;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .service-card__text {
+            color: #7a6a5f;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            flex-grow: 1;
+        }
+        
+        /* Специальные стили для первых двух карточек с фотографиями */
+        .service-card-with-photo {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            background: none;
+            border: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card-with-photo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .service-photo-content {
+            padding: 25px;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card__photo-title {
+            color: #5a4a42;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .service-card__photo-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #d4b896;
+        }
+        
+        .service-card__photo-text {
+            color: #7a6a5f;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            flex-grow: 1;
+        }
+        
+        /* Дополнительные декоративные элементы */
+        .services::after {
+            content: '✦';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #d4b896;
+            opacity: 0.3;
+        }
+        
+        @media (max-width: 768px) {
+            .services {
+                margin: 20px;
+                padding: 40px 20px;
+            }
+            
+            .services__grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .section__title {
+                font-size: 2rem;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,14 +229,14 @@
                     <span>Alan Кай</span>
                 </a>
                 <nav class="nav" id="nav">
-    <a href="#main" class="nav__link">Главная</a>
-    <a href="#about" class="nav__link">О нас</a>
-    <a href="#services" class="nav__link">Услуги</a>
-    <a href="#prices" class="nav__link">Прайс</a>
-    <a href="#team" class="nav__link">Команда</a>
-    <a href="#reviews" class="nav__link">Отзывы</a> 
-    <a href="#contacts" class="nav__link">Контакты</a>
-</nav>
+                    <a href="#main" class="nav__link">Главная</a>
+                    <a href="#about" class="nav__link">О нас</a>
+                    <a href="#services" class="nav__link">Услуги</a>
+                    <a href="#prices" class="nav__link">Прайс</a>
+                    <a href="#team" class="nav__link">Команда</a>
+                    <a href="#reviews" class="nav__link">Отзывы</a> 
+                    <a href="#contacts" class="nav__link">Контакты</a>
+                </nav>
                 <a href="tel:+79952611817" class="phone">
                     <i class="fas fa-phone-alt"></i>
                     +7 (995) 261-18-17
@@ -42,24 +251,23 @@
     </header>
 
     <!-- Герой-секция с видео-фоном -->
-<section class="hero" id="main">
-    <!-- Видео-фон -->
-    <div class="video-container">
-        <video autoplay muted loop playsinline class="video-bg">
-            <source src="images/team/video_2025-12-14_13-28-13.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-    
-    <div class="container">
-        <div class="hero__inner">
-            <h1 class="hero__title">Ваш оазис гармонии и красоты</h1>
-            <p class="hero__text">Профессиональные спа-процедуры для тела и души в атмосфере уюта и расслабления.</p>
-            <a href="#contacts" class="btn btn--primary">Записаться онлайн</a>
+    <section class="hero" id="main">
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="video-bg">
+                <source src="images/team/video_2025-12-14_13-28-13.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <div class="video-overlay"></div>
         </div>
-    </div>
-</section>
+        
+        <div class="container">
+            <div class="hero__inner">
+                <h1 class="hero__title">Ваш оазис гармонии и красоты</h1>
+                <p class="hero__text">Профессиональные спа-процедуры для тела и души в атмосфере уюта и расслабления.</p>
+                <a href="#contacts" class="btn btn--primary">Записаться онлайн</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Блок "О нас" -->
     <section class="about section" id="about">
@@ -82,229 +290,237 @@
         </div>
     </section>
 
-    <!-- Услуги -->
+    <!-- ОБНОВЛЁННАЯ СЕКЦИЯ УСЛУГ С ФОТОГРАФИЯМИ -->
     <section class="services section" id="services">
         <div class="container">
             <h2 class="section__title">Наши услуги</h2>
             <div class="services__grid">
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <i class="fas fa-hot-tub"></i>
+                <!-- Карточка 1: SPA-программы с фото -->
+                <div class="service-card service-card-with-photo">
+                    <img src="images/team/photo_2025-12-14_13-28-18.jpg" 
+                         alt="SPA-программы" class="service-photo">
+                    <div class="service-photo-content">
+                        <h3 class="service-card__photo-title">SPA-программы</h3>
+                        <p class="service-card__photo-text">Комплексные ритуалы для глубокого расслабления и детоксикации организма. От классического до тайского массажа, восстановление мышц, снятие стресса.</p>
                     </div>
-                    <h3 class="service-card__title">SPA-программы</h3>
-                    <p class="service-card__text">Комплексные ритуалы для глубокого расслабления и детоксикации организма.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <i class="fas fa-hand-sparkles"></i>
+                
+                <!-- Карточка 2: Массажи с фото -->
+                <div class="service-card service-card-with-photo">
+                    <img src="images/team/photo_2025-12-14_13-40-39 (2).jpg" 
+                         alt="Массажи" class="service-photo">
+                    <div class="service-photo-content">
+                        <h3 class="service-card__photo-title">Массажи</h3>
+                        <p class="service-card__photo-text">Профессиональные массажные техники для восстановления мышц и снятия стресса. Классический, тайский, спортивный, лимфодренажный и другие виды массажа.</p>
                     </div>
-                    <h3 class="service-card__title">Массажи</h3>
-                    <p class="service-card__text">От классического до тайского. Восстановление мышц, снятие стресса.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="service-card__title">Уход за лицом</h3>
-                    <p class="service-card__text">Персонализированные программы для сияющей и здоровой кожи.</p>
+                
+                <!-- Карточка 3: Уход за лицом  -->
+                <div class="service-card service-card-with-photo">
+                    <img src="images/team/photo_2025-12-14_14-15-37.jpg" 
+                         alt="Уход за лицом" class="service-photo">
+                    <div class="service-photo-content">
+                        <h3 class="service-card__photo-title">Уход за лицом</h3>
+                    <p class="service-card__text">Персонализированные программы для сияющей и здоровой кожи. Профессиональные уходы, пилинги, массажи лица.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-card__icon">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <h3 class="service-card__title">Термо-зона</h3>
-                    <p class="service-card__text">Комната для глубокого очищения и укрепления иммунитета.</p>
+                
+                <!-- Карточка 4: Термо-зона  -->
+                 <div class="service-card service-card-with-photo">
+                    <img src="images/team/photo_2025-12-14_13-28-44.jpg" 
+                         alt="Термо-зона" class="service-photo">
+                    <div class="service-photo-content">
+                        <h3 class="service-card__photo-title">Термо-зона</h3>
+                    <p class="service-card__text">Комната для глубокого очищения и укрепления иммунитета. Сауна, хаммам, инфракрасная кабина.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Прайс-лист -->
-<section class="prices section" id="prices">
-    <div class="container">
-        <h2 class="section__title">Прайс-лист</h2>
-        <div class="prices__inner">
-            
-            <!-- Классические программы -->
-            <div class="price-category">
-                <h3 class="price-category__title">
-                    <i class="fas fa-spa"></i> КЛАССИЧЕСКИЕ ПРОГРАММЫ
-                </h3>
-                <div class="price-items">
-                    <div class="price-item">
-                        <div class="price-item__name">Классический массаж</div>
-                        <div class="price-item__duration">60/90/120 мин</div>
-                        <div class="price-item__price">2000/2500/ 3000₽</div>
+    <section class="prices section" id="prices">
+        <div class="container">
+            <h2 class="section__title">Прайс-лист</h2>
+            <div class="prices__inner">
+                <!-- Классические программы -->
+                <div class="price-category">
+                    <h3 class="price-category__title">
+                        <i class="fas fa-spa"></i> КЛАССИЧЕСКИЕ ПРОГРАММЫ
+                    </h3>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <div class="price-item__name">Классический массаж</div>
+                            <div class="price-item__duration">60/90/120 мин</div>
+                            <div class="price-item__price">2000/2500/3000₽</div>
+                        </div>
+                       
+                        <div class="price-item">
+                            <div class="price-item__name">Лимфодренажный массаж</div>
+                            <div class="price-item__duration">60/90 мин</div>
+                            <div class="price-item__price">2000/2500₽</div>
+                        </div>
+                        
+                        <div class="price-item">
+                            <div class="price-item__name">Спортивный массаж</div>
+                            <div class="price-item__duration">60/90/120 мин</div>
+                            <div class="price-item__price">2500/3500/4000₽</div>
+                        </div>
                     </div>
-                   
-                    <div class="price-item">
-                        <div class="price-item__name">Лимфодренажный массаж</div>
-                        <div class="price-item__duration">60/90 мин</div>
-                        <div class="price-item__price">2000/2500₽</div>
+                </div>
+                
+                <!-- Уход за фигурой -->
+                <div class="price-category">
+                    <h3 class="price-category__title">
+                        <i class="fas fa-heart"></i> УХОД ЗА ФИГУРОЙ
+                    </h3>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <div class="price-item__name">Фитнес массаж</div>
+                            <div class="price-item__duration">60 мин</div>
+                            <div class="price-item__price">2000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Антицеллюлитный массаж</div>
+                            <div class="price-item__duration">60 мин</div>
+                            <div class="price-item__price">2000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Массаж по скрабу</div>
+                            <div class="price-item__duration">60 мин</div>
+                            <div class="price-item__price">2000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Медовый массаж</div>
+                            <div class="price-item__duration">60 мин</div>
+                            <div class="price-item__price">2000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Обёртывание (горячее/холодное/водорослевое)</div>
+                            <div class="price-item__duration">1 сеанс</div>
+                            <div class="price-item__price">700 ₽</div>
+                        </div>
                     </div>
-                    
-                    <div class="price-item">
-                        <div class="price-item__name">Спортивный массаж</div>
-                        <div class="price-item__duration">60/90/120 мин</div>
-                        <div class="price-item__price">2500/3500/ 4000₽</div>
+                </div>
+                
+                <!-- Курсы и абонементы -->
+                <div class="price-category">
+                    <h3 class="price-category__title">
+                        <i class="fas fa-gem"></i> КУРСЫ ИЗ 10 АБОНИМЕНТОВ
+                    </h3>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <div class="price-item__name">Твоя стройность (10 сеансов антицеллюлитного массажа)</div>
+                            <div class="price-item__price">23000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Облегчение отеков и тяжести (10 сеансов лимфодренажного массажа)</div>
+                            <div class="price-item__price">23000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Восстановление мышц (10 сеансов спортивного массажа)</div>
+                            <div class="price-item__price">28000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Избавься от спазмов (10 восстановительных массажей)</div>
+                            <div class="price-item__price">23000 ₽</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Массаж 1 зоны и доп. услуги -->
+                <div class="price-category">
+                    <h3 class="price-category__title">
+                        <i class="fas fa-star"></i> МАССАЖ 1 ЗОНЫ И ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
+                    </h3>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <div class="price-item__name">Массаж 1 зоны (спина/ноги/руки/шея+голова)</div>
+                            <div class="price-item__price">1700 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Баночный массаж</div>
+                            <div class="price-item__duration">30 мин</div>
+                            <div class="price-item__price">1000 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Перкуссия</div>
+                            <div class="price-item__duration">30 мин</div>
+                            <div class="price-item__price">800 ₽</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Брови и ресницы -->
+                <div class="price-category">
+                    <h3 class="price-category__title">
+                        <i class="fas fa-eye"></i> БРОВИ И РЕСНИЦЫ
+                    </h3>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <div class="price-item__name">Ламинирование + окрашивание ресниц</div>
+                            <div class="price-item__price">1600 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Ламинирование комплекс (ламинирование+окрашивание+ботокс)</div>
+                            <div class="price-item__price">1700 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Ламинирование нижних ресниц (лами+окрашивание)</div>
+                            <div class="price-item__price">800 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Окрашивание ресниц</div>
+                            <div class="price-item__price">300 ₽</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ваксинг и брови -->
+                <div class="price-category">
+                    <h3 class="price-category__title">
+                        <i class="fas fa-cut"></i> ВАКСИНГ И БРОВИ
+                    </h3>
+                    <div class="price-items">
+                        <div class="price-item">
+                            <div class="price-item__name">Ваксинг (1 зона)</div>
+                            <div class="price-item__price">300 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Коррекция бровей (воск/пинцет + прореживание + уход)</div>
+                            <div class="price-item__price">800 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Оформление бровей (коррекция + окрашивание + уход)</div>
+                            <div class="price-item__price">1200 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Долговременная укладка (коррекция + Д/у)</div>
+                            <div class="price-item__price">1200 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Долговременная укладка комплекс (коррекция + Д/у + окрашивание + уход)</div>
+                            <div class="price-item__price">1600 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Мужская коррекция (коррекция + прореживание + уход)</div>
+                            <div class="price-item__price">700 ₽</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-item__name">Комплекс для мужчин (коррекция + прореживание + окрашивание + уход)</div>
+                            <div class="price-item__price">1000 ₽</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Уход за фигурой -->
-            <div class="price-category">
-                <h3 class="price-category__title">
-                    <i class="fas fa-heart"></i> УХОД ЗА ФИГУРОЙ
-                </h3>
-                <div class="price-items">
-                    <div class="price-item">
-                        <div class="price-item__name">Фитнес массаж</div>
-                        <div class="price-item__duration">60 мин</div>
-                        <div class="price-item__price">2000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Антицеллюлитный массаж</div>
-                        <div class="price-item__duration">60 мин</div>
-                        <div class="price-item__price">2000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Массаж по скрабу</div>
-                        <div class="price-item__duration">60 мин</div>
-                        <div class="price-item__price">2000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Медовый массаж</div>
-                        <div class="price-item__duration">60 мин</div>
-                        <div class="price-item__price">2000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Обёртывание (горячее/холодное/водорослевое)</div>
-                        <div class="price-item__duration">1 сеанс</div>
-                        <div class="price-item__price">700 ₽</div>
-                    </div>
-                </div>
+            <div class="prices__note">
+                <p><i class="fas fa-info-circle"></i> Все процедуры выполняются сертифицированными специалистами. Перед процедурой обязательна консультация.</p>
             </div>
-            
-            <!-- Курсы и абонементы -->
-            <div class="price-category">
-                <h3 class="price-category__title">
-                    <i class="fas fa-gem"></i> КУРСЫ ИЗ 10 АБОНИМЕНТОВ
-                </h3>
-                <div class="price-items">
-                    <div class="price-item">
-                        <div class="price-item__name">Твоя стройность (10 сеансов антицеллюлитного массажа)</div>
-                        <div class="price-item__price">23000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Облегчение отеков и тяжести (10 сеансов лимфодренажного массажа)</div>
-                        <div class="price-item__price">23000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Восстановление мышц (10 сеансов спортивного массажа)</div>
-                        <div class="price-item__price">28000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Избавься от спазмов (10 восстановительных массажей)</div>
-                        <div class="price-item__price">23000 ₽</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Массаж 1 зоны и доп. услуги -->
-            <div class="price-category">
-                <h3 class="price-category__title">
-                    <i class="fas fa-star"></i> МАССАЖ 1 ЗОНЫ И ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
-                </h3>
-                <div class="price-items">
-                    <div class="price-item">
-                        <div class="price-item__name">Массаж 1 зоны (спина/ноги/руки/шея+голова)</div>
-                        <div class="price-item__price">1700 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Баночный массаж</div>
-                        <div class="price-item__duration">30 мин</div>
-                        <div class="price-item__price">1000 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Перкуссия</div>
-                        <div class="price-item__duration">30 мин</div>
-                        <div class="price-item__price">800 ₽</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Брови и ресницы -->
-            <div class="price-category">
-                <h3 class="price-category__title">
-                    <i class="fas fa-eye"></i> БРОВИ И РЕСНИЦЫ
-                </h3>
-                <div class="price-items">
-                    <div class="price-item">
-                        <div class="price-item__name">Ламинирование + окрашивание ресниц</div>
-                        <div class="price-item__price">1600 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Ламинирование комплекс (ламинирование+окрашивание+ботокс)</div>
-                        <div class="price-item__price">1700 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Ламинирование нижних ресниц (лами+окрашивание)</div>
-                        <div class="price-item__price">800 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Окрашивание ресниц</div>
-                        <div class="price-item__price">300 ₽</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Ваксинг и брови -->
-            <div class="price-category">
-                <h3 class="price-category__title">
-                    <i class="fas fa-cut"></i> ВАКСИНГ И БРОВИ
-                </h3>
-                <div class="price-items">
-                    <div class="price-item">
-                        <div class="price-item__name">Ваксинг (1 зона)</div>
-                        <div class="price-item__price">300 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Коррекция бровей (воск/пинцет + прореживание + уход)</div>
-                        <div class="price-item__price">800 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Оформление бровей (коррекция + окрашивание + уход)</div>
-                        <div class="price-item__price">1200 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Долговременная укладка (коррекция + Д/у)</div>
-                        <div class="price-item__price">1200 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Долговременная укладка комплекс (коррекция + Д/у + окрашивание + уход)</div>
-                        <div class="price-item__price">1600 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Мужская коррекция (коррекция + прореживание + уход)</div>
-                        <div class="price-item__price">700 ₽</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-item__name">Комплекс для мужчин (коррекция + прореживание + окрашивание + уход)</div>
-                        <div class="price-item__price">1000 ₽</div>
-                    </div>
-                </div>
-            </div>
-            
         </div>
-        <div class="prices__note">
-            <p><i class="fas fa-info-circle"></i> Все процедуры выполняются сертифицированными специалистами. Перед процедурой обязательна консультация.</p>
-        </div>
-    </div>
-</section>
-    <!-- Наша команда -->
+    </section>
+  <!-- Наша команда -->
 <section class="team section" id="team">
     <div class="container">
         <h2 class="section__title">Наша команда</h2>
+        <p class="section__subtitle">Профессионалы с медицинским образованием и большим опытом</p>
         
         <!-- Главный специалист (Алан) - отдельный большой блок -->
         <div class="main-specialist">
@@ -313,6 +529,7 @@
                     <img src="images/team/photo_2025-12-10_15-08-37.jpg" alt="Алан">
                     <div class="main-specialist__overlay">
                         <div class="main-specialist__experience">Опыт: 9 лет</div>
+                        <div class="main-specialist__badge">Руководитель</div>
                     </div>
                 </div>
                 <div class="main-specialist__info">
@@ -704,6 +921,21 @@
     </div>
 </footer>
 
+                
     <script src="script.js"></script>
+    <script>
+            // Также можно добавить обработчики для красивых эффектов
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
