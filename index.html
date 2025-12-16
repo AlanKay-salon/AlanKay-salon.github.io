@@ -41,17 +41,25 @@
         </div>
     </header>
 
-    <!-- Герой-секция (главный баннер) -->
-    <section class="hero" id="main">
-        <div class="container">
-            <div class="hero__inner">
-                <h1 class="hero__title">Ваш оазис гармонии и красоты</h1>
-                <p class="hero__text">Профессиональные спа-процедуры для тела и души в атмосфере уюта и расслабления.</p>
-                <a href="#contacts" class="btn btn--primary">Записаться онлайн</a>
-            </div>
+    <!-- Герой-секция с видео-фоном -->
+<section class="hero" id="main">
+    <!-- Видео-фон -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="images/team/video_2025-12-14_13-28-13.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="hero__inner">
+            <h1 class="hero__title">Ваш оазис гармонии и красоты</h1>
+            <p class="hero__text">Профессиональные спа-процедуры для тела и души в атмосфере уюта и расслабления.</p>
+            <a href="#contacts" class="btn btn--primary">Записаться онлайн</a>
         </div>
-        <div class="hero__overlay"></div>
-    </section>
+    </div>
+</section>
 
     <!-- Блок "О нас" -->
     <section class="about section" id="about">
@@ -59,7 +67,7 @@
             <h2 class="section__title">Почему выбирают нас?</h2>
             <div class="about__inner">
                 <div class="about__image">
-                    <img src="images/team/i.webp" alt="Интерьер спа">
+                    <img src="images/team/photo_2025-12-16_21-31-50.jpg" alt="Интерьер спа">
                 </div>
                 <div class="about__content">
                     <p>Alan Кай — это место, где современные технологии ухода за телом встречаются с вековыми традициями релаксации. Мы создали пространство, в котором каждый элемент направлен на ваше полное восстановление.</p>
@@ -297,7 +305,6 @@
 <section class="team section" id="team">
     <div class="container">
         <h2 class="section__title">Наша команда</h2>
-        <p class="section__subtitle">Профессионалы с медицинским образованием и большим опытом</p>
         
         <!-- Главный специалист (Алан) - отдельный большой блок -->
         <div class="main-specialist">
@@ -306,7 +313,6 @@
                     <img src="images/team/photo_2025-12-10_15-08-37.jpg" alt="Алан">
                     <div class="main-specialist__overlay">
                         <div class="main-specialist__experience">Опыт: 9 лет</div>
-                        <div class="main-specialist__badge">Руководитель</div>
                     </div>
                 </div>
                 <div class="main-specialist__info">
