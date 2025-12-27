@@ -1384,3 +1384,36 @@ body {
         font-size: 1.5rem;
     }
 }
+/* Добавьте в конец CSS файла */
+.service-photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 2px 2px 0 0;
+    filter: brightness(0.8) contrast(1.1);
+    transition: all 0.5s ease;
+}
+
+.service-card-with-photo:hover .service-photo {
+    filter: brightness(0.9) contrast(1.2);
+    transform: scale(1.03);
+}
+
+.service-photo-content {
+    padding: 40px 30px;
+    background: rgba(30, 30, 30, 0.95);
+    flex-grow: 1;
+}
+
+.service-card__photo-title {
+    color: #f4e4a6;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.service-card__photo-text {
+    color: #b8a98c;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
