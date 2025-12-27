@@ -653,6 +653,4 @@ document.addEventListener('DOMContentLoaded', function() {
     initStars();
     console.log('Форма отзывов готова к работе!');
     
-    // 7. АДМИН-ПАНЕЛЬ ДЛЯ ПРОСМОТРА ОТЗЫВОВ (опционально)
-    // Добавьте в консоли браузера: localStorage.getItem('alanKayReviews')
 });
