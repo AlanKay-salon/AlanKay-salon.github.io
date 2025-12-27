@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alan Кай | Классика массажа | Центр эстетики лица и тела</title>
-    <style>
-        /* Обновляем фон всего сайта */
-        body {
-            background-color: #f8f5f1;
-            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-            background-attachment: fixed;
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,10 +44,11 @@
     <!-- Герой-секция с видео-фоном -->
     <section class="hero" id="main">
         <div class="video-container">
-            <video autoplay muted loop playsinline class="video-bg">
-                <source src="images/team/video_2025-12-14_13-28-13.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
+           <video autoplay muted loop playsinline class="video-bg">
+    <source src="images/team/video_2025-12-14_13-28-13.mp4" type="video/mp4">
+    <source src="images/team/video_2025-12-14_13-28-13.webm" type="video/webm">
+    <img src="images/team/fallback-hero.jpg" alt="Салон красоты">
+</video>
             <div class="video-overlay"></div>
         </div>
         
@@ -749,19 +742,6 @@
 
                 
     <script src="script.js"></script>
-    <script>
-            // Также можно добавить обработчики для красивых эффектов
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.zIndex = '10';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.zIndex = '1';
-                });
-            });
-        });
-    </script>
+   
 </body>
 </html>
